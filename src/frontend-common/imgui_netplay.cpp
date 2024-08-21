@@ -65,6 +65,7 @@ static constexpr float NETPLAY_MESSAGE_FADE_TIME = 2.0f;
 static bool s_netplay_chat_dialog_open = false;
 static bool s_netplay_chat_dialog_opening = false;
 static std::string s_netplay_chat_message;
+static bool show_ping_notification;
 
 void Host::OnNetplayMessage(std::string message)
 {
@@ -137,7 +138,6 @@ void ImGuiManager::DrawNetplayMessages()
 
 void ImGuiManager::TogglePingNotification()
 {
-  bool was_enabled_ping = show_ping_notification;
   show_ping_notification = show_ping_notification ? false : true;
 }
 
