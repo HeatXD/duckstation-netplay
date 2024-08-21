@@ -135,13 +135,22 @@ void ImGuiManager::DrawNetplayMessages()
   }
 }
 
+void ImGuiManager::TogglePingNotification()
+{
+  bool was_enabled_ping = show_ping_notification;
+  show_ping_notification = show_ping_notification ? false : true;
+}
+
 void ImGuiManager::DrawNetplayStats()
 {
   // Not much yet.. eventually we'll render chat and such here too.
   // We'll probably want to draw a graph too..
 
   LargeString text;
-  text.AppendFmtString("Ping: {}\n", Netplay::GetPing());
+  if (show_ping_notification)
+  {
+    text.AppendFmtString("Ping: {}\n", Netplay::GetPing());
+  }
 
   // temporary show the hostcode here for now
   auto hostcode = Netplay::GetHostCode();

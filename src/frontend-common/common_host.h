@@ -53,4 +53,5 @@ std::unique_ptr<AudioStream> CreateXAudio2Stream(u32 sample_rate, u32 channels, 
 
 namespace ImGuiManager {
 void RenderDebugWindows();
+void TogglePingNotification();
 }
