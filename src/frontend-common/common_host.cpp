@@ -688,6 +688,11 @@ DEFINE_HOTKEY("ToggleDesyncNotifications", TRANSLATABLE("Hotkeys", "Netplay"), T
                 if (!pressed)
                   Netplay::ToggleDesyncNotifications();
               })
+DEFINE_HOTKEY("TogglePingNotification", TRANSLATABLE("Hotkeys", "Netplay"),
+              TRANSLATABLE("Hotkeys", "Toggle Ping Notifications"), [](s32 pressed) {
+                if (!pressed)
+                  ImGuiManager::TogglePingNotification();
+              })
 #endif
 
 DEFINE_HOTKEY("FastForward", TRANSLATABLE("Hotkeys", "General"), TRANSLATABLE("Hotkeys", "Fast Forward"),
